@@ -7,3 +7,5 @@
 4. 使用第三方APP接口的跨域方法。
 5. 使用模型类渲染数据。
 6. 封装`promise`的方法。
+7. 基于`better-scroll`封装组件的使用方式。
+8. `react-lazyload`配合`better-scroll`的使用。

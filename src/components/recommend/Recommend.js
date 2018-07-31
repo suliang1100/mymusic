@@ -10,6 +10,7 @@ import {CODE_SUCCESS} from "../../api/config"
 import "swiper/dist/css/swiper.css"
 import './recommend.styl';
 import * as AlbumModel from '../../model/album';
+import Scroll from '../../common/Scroll'
 
 class Recommend extends React.Component {
     constructor(props) {
@@ -97,6 +98,11 @@ class Recommend extends React.Component {
 
         return (
             <div className="music-recommend">
+            <Scroll refresh={this.state.refreshScroll} 
+				onScroll={(e) => {
+					/*检查懒加载组件是否出现在视图中，如果出现就加载组件*/
+					forceCheck();}}>
+                <div>
                 <div className="slider-container">
                     <div className="swiper-wrapper">
                         {
@@ -119,6 +125,8 @@ class Recommend extends React.Component {
                         {albums}
                     </div>
                 </div>
+                </div>
+            </Scroll>
             </div>
         )
     }
