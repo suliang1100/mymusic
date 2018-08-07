@@ -3,8 +3,9 @@
  *  create by suliang on 2018-07-26
  */
 import React from 'react';
-
 import Swiper from "swiper"
+import LazyLoad, { forceCheck } from "react-lazyload"
+
 import {getCarousel,getNewAlbum} from "../../api/recommond"
 import {CODE_SUCCESS} from "../../api/config"
 import "swiper/dist/css/swiper.css"
@@ -79,7 +80,9 @@ class Recommend extends React.Component {
             return (
                 <div className="album-wrapper" key={album.mId}>
                     <div className="left">
+                    <LazyLoad height={60}>
                         <img src={album.img} width="100%" height="100%" alt={album.name}/>
+                    </LazyLoad>
                     </div>
                     <div className="right">
                         <div className="album-name">
